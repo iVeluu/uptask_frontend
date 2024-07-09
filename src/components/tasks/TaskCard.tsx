@@ -20,7 +20,7 @@ export default function TaskCard({ task }: TaskCardProps ) {
 
     const queryClient = useQueryClient()
 
-    const { mutate, reset } = useMutation({
+    const { mutate } = useMutation({
         mutationFn: deleteTask,
         onError: (error) => {
             toast.error(error.message)
