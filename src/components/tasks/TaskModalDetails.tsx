@@ -90,7 +90,7 @@ export default function TaskModalDetails() {
 
                                     <p className='text-lg text-slate-500 mb-2'>Descripción: {data.description}</p>
                                     <div className='my-5 space-y-3'>
-                                        <label className='font-bold'>Estado Actual: {data.status}</label>
+                                        <label className='font-bold'>Estado Actual: {statusTranslations[data.status]}</label>
 
                                         <select 
                                             className='w-full p-3 bg-white border border-gray-300 rounded-lg' 
