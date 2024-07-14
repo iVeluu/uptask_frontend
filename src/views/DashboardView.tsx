@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 
 export default function DashboardView() {
 
-    const { data } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ['projects'],
         queryFn: getProjects
     })
@@ -26,6 +26,8 @@ export default function DashboardView() {
             queryClient.invalidateQueries({queryKey: ['projects']})
         }
     })
+
+    if (isLoading) return 'Cargando...'
 
     if(data) return (
         <>
