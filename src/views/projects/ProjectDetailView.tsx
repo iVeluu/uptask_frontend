@@ -4,7 +4,7 @@ import EditTaskData from "@/components/tasks/EditTaskData"
 import TaskList from "@/components/tasks/TaskList"
 import TaskModalDetails from "@/components/tasks/TaskModalDetails"
 import { useQuery } from "@tanstack/react-query"
-import { Navigate, useNavigate, useParams } from "react-router-dom"
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom"
 
 export default function ProjectDetailView() {
 
@@ -30,6 +30,11 @@ export default function ProjectDetailView() {
                     className="bg-purple-400 hover:bg-purple-500 transition-colors px-10 py-3 text-white text-xl font-bold cursor-pointer"
                     onClick={() => navigate( location.pathname + '?newTask=true')}
                     >Agregar Tarea</button>
+
+                <Link
+                    to={'team'}
+                    className="bg-fuchsia-400 hover:bg-fuchsia-500 transition-colors px-10 py-3 text-white text-xl font-bold cursor-pointer"
+                >Colaboradores</Link>
             </nav>
 
             <TaskList tasks={data.tasks} />
