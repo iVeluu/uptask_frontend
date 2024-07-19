@@ -29,6 +29,7 @@ export const userSchema = authSchema.pick({
 })
 
 export type User = z.infer<typeof userSchema>
+export type UserProfileForm = Pick<User, 'name' | 'email'>
 
 
 export type Task = z.infer<typeof taskSchema>
